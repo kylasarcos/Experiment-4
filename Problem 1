@@ -1,0 +1,96 @@
+#include <iostream>
+#include <conio.h>
+
+using namespace std;
+
+int add(int a,int b)
+{
+	int x;
+	x = a+b;
+	return x;
+}
+
+int subtract(int a,int b)
+{
+	int x;
+	x = a-b;
+	return x;
+}
+
+int multiply(int a,int b)
+{
+	int x;
+	x = a*b;
+	return x;
+}
+
+int divide(int a,int b)
+{
+	int x;
+	x = a/b;
+	return x;
+}
+
+int mod(int a,int b)
+{
+	int x;
+	x = a%b;
+	return x;
+}
+
+int main()
+{
+	int opp, a,b,c;
+	char cont;
+	bool abort = false;
+	
+	opp = 1;
+	do{
+		cout << "MENU: "<<endl;
+		cout << "1. Add\n2. Subtract\n3. Multiply\n4. Divide\n5. Modulus\n" <<endl;
+		cout << "Enter the number of your desired operation: ";
+		cin >> opp;
+
+	if (opp > 0 && opp <= 5){
+		cout << "\nEnter the first integer: "<< endl;
+		cin >> a;
+		cout << "Enter the second integer: "<<endl;
+		cin >> b;
+
+		switch (opp){
+		case 1:
+			cout << "The sum of the two integers is: " << add(a,b) << endl;
+			break;
+		case 2:
+			cout << "The difference of the two integers is: " << subtract(a,b) << endl;
+			break;
+		case 3:
+			cout << "The product of the two integers is: " << multiply(a,b) << endl;
+			break;
+		case 4:
+			cout << "The quotient of the two integers is: " << divide(a,b) << endl;
+			break;
+		case 5:
+			cout << "The remainder of the two integers is: " << mod(a,b) << endl;
+			break;}}
+	else{
+		cout << "Invalid Choice." <<endl;
+		abort = true;}
+
+	cout << "Press Y to continue, press other keys to exit." <<endl;
+	cin >> cont;
+
+	if (cont == 'y' || cont == 'Y'){
+		abort = false;
+		}
+	else {
+		cout << "\nThank you for using the program!" << endl;
+		abort = true;}
+
+	} while (!abort);
+
+
+
+	_getch();
+	return 0;
+}
